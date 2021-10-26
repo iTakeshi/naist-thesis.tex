@@ -1,0 +1,191 @@
+% Flags
+\newcommand{\NaistDraft}{}  % comment out before final submission!!
+\newcommand{\NaistShowLOF}{}  % comment out if there are no figures
+\newcommand{\NaistShowLOT}{}  % comment out if there are no tables
+
+% Configurations
+\newcommand{\NaistDocTitle}{Doctral Dissertation}  % or Master's Thesis
+\newcommand{\NaistTitle}{YOUR THESIS TITLE}
+\newcommand{\NaistAuthor}{YOUR NAME}
+\newcommand{\NaistProg}{YOUR EDUCATION PROGRAM}  % ref: http://www.naist.jp/en/education_research/science_technology/education_programs/
+\newcommand{\NaistDiv}{Division of Information Science}
+\newcommand{\NaistDept}{Graduate School of Science and Technology}
+\newcommand{\NaistInst}{Nara Institute of Science and Technology}
+\newcommand{\NaistProf}{YOUR SUPERVISOR'S NAME}
+\newcommand{\NaistLab}{YOUR LABORATORY NAME}
+\newcommand{\NaistDegree}{Doctor}  % or Master
+\newcommand{\NaistMajor}{Engineering}  % or Science, Bioscience, ...
+
+% Co-supervisors (delete unnecessary lines)
+\newcommand{\NaistComNameA}{CO-SUPERVISOR 1 NAME}
+\newcommand{\NaistComAffiA}{CO-SUPERVISOR 1 AFFILIATION}
+\newcommand{\NaistComNameB}{CO-SUPERVISOR 2 NAME}
+\newcommand{\NaistComAffiB}{CO-SUPERVISOR 2 AFFILIATION}
+\newcommand{\NaistComNameC}{CO-SUPERVISOR 3 NAME}
+\newcommand{\NaistComAffiC}{CO-SUPERVISOR 3 AFFILIATION}
+\newcommand{\NaistComNameD}{CO-SUPERVISOR 4 NAME}
+\newcommand{\NaistComAffiD}{CO-SUPERVISOR 4 AFFILIATION}
+\newcommand{\NaistComNameE}{CO-SUPERVISOR 5 NAME}
+\newcommand{\NaistComAffiE}{CO-SUPERVISOR 5 AFFILIATION}
+\newcommand{\NaistComNameF}{CO-SUPERVISOR 6 NAME}
+\newcommand{\NaistComAffiF}{CO-SUPERVISOR 6 AFFILIATION}
+
+% Abstract and keywords
+\newcommand{\NaistAbst}{
+    YOUR ABSTRACT GOES HERE
+}
+\newcommand{\NaistKeywords}{
+    NAIST, thesis, template, keywords
+}
+
+
+% Style definitions (DO NOT EDIT unless you know what you're doing!)
+% =============================================================================
+
+\usepackage{datetime2}
+\usepackage{geometry}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{titlesec}
+
+\geometry{a4paper,textheight=205mm,textwidth=145mm,centering}
+\linespread{1.2}
+
+\titleformat{\chapter}{\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\newcommand{\NaistDraftTitle}{{DRAFT --- \DTMnow}}
+
+\newcommand{\NaistDate}{%
+    \ifcase \month
+        \or January
+        \or February
+        \or March
+        \or April
+        \or May
+        \or June
+        \or July
+        \or August
+        \or September
+        \or October
+        \or November
+        \or December
+    \fi
+    \number\day,\space\number\year
+}
+
+\newcommand{\NaistTitlePageInfo}{
+    \centering
+    {\Large\bfseries\NaistAuthor} \\
+    \NaistProg \\
+    \NaistDept \\
+    \NaistInst \\[2\baselineskip]
+    Supervisor: Prof. \NaistProf \\
+    \NaistLab\space(\NaistDiv) \\[2\baselineskip]
+    Submitted on \NaistDate
+}
+
+\newcommand{\NaistCommitteePageInfo}{
+    \begin{center}
+        A \NaistDocTitle \\
+        submitted to \NaistDept, \\
+        \NaistInst \\
+        in partial fulfillment of the requirements for the degree of \\
+        \NaistDegree\space of \NaistMajor \\[\baselineskip]
+        \NaistAuthor \\[1.5\baselineskip]
+    \end{center}
+
+    \noindent
+    \begin{tabular}{ll}
+        \multicolumn{2}{l}{Thesis Committee:} \\
+        Supervisor & \NaistProf \\
+                   & (Professor, \NaistDiv) \\
+        \ifdefined \NaistComNameA
+                   & \NaistComNameA \\
+                   & (\NaistComAffiA) \\
+        \fi
+        \ifdefined \NaistComNameB
+                   & \NaistComNameB \\
+                   & (\NaistComAffiB) \\
+        \fi
+        \ifdefined \NaistComNameC
+                   & \NaistComNameC \\
+                   & (\NaistComAffiC) \\
+        \fi
+        \ifdefined \NaistComNameD
+                   & \NaistComNameD \\
+                   & (\NaistComAffiD) \\
+        \fi
+        \ifdefined \NaistComNameE
+                   & \NaistComNameE \\
+                   & (\NaistComAffiE) \\
+        \fi
+        \ifdefined \NaistComNameF
+                   & \NaistComNameF \\
+                   & (\NaistComAffiF) \\
+        \fi
+    \end{tabular}
+}
+
+\newcommand{\NaistFrontPages}{
+    % page 1
+    \thispagestyle{empty}
+    \begin{textblock*}{\textwidth}(32.5mm, 70mm)
+        \centering\Large\bfseries
+        \ifdefined \NaistDraft
+            \NaistDraftTitle
+        \else
+            \NaistDocTitle
+        \fi
+    \end{textblock*}
+    \begin{textblock*}{\textwidth}(32.5mm,120mm)
+        \centering\Large\bfseries\NaistTitle
+    \end{textblock*}
+    \begin{textblock*}{\textwidth}(32.5mm,184.4mm)
+        \NaistTitlePageInfo
+    \end{textblock*}
+
+    \vspace*{\fill}
+    \clearpage
+
+    % page 2
+    \thispagestyle{empty}
+    \begin{textblock*}{\textwidth}(32.5mm,106mm)
+        \NaistCommitteePageInfo
+    \end{textblock*}
+
+    \vspace*{\fill}
+    \clearpage
+
+    \pagenumbering{roman}
+
+    % abstract
+    \begin{center}
+        \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+        {\Large\bfseries\NaistTitle\footnote[1]{\NaistDocTitle, \NaistDept, \NaistInst, \NaistDate.}}
+        \renewcommand{\thefootnote}{\arabic{footnote}}
+        \\[2\baselineskip]
+        {\large\NaistAuthor}
+        \\[2\baselineskip]
+        {\bfseries Abstract}
+        \\[\baselineskip]
+    \end{center}
+    \NaistAbst
+    \\[1.5\baselineskip]
+    {\large\bfseries Keywords:}
+    \\[\baselineskip]
+    \NaistKeywords
+
+    \clearpage
+
+    % table of contents
+    \tableofcontents
+    \ifdefined \NaistShowLOF
+        \listoffigures
+    \fi
+    \ifdefined \NaistShowLOT
+        \listoftables
+    \fi
+    \clearpage
+
+    \pagenumbering{arabic}
+}
