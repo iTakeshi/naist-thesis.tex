@@ -12,7 +12,7 @@ I know you want to use packages or configurations you choose on your own, and I 
 
 #### Make it as easy as possible to use
 You only need to `\input` one `.tex` file and one line just after `\begin{document}`.
-All the required settings are packed in the upper half of the template file.
+All the required configurations (e.g., your name, thesis title, etc.) are packed in the upper half of the template file.
 
 ### Usage
 ```tex
@@ -20,7 +20,7 @@ All the required settings are packed in the upper half of the template file.
 
 \documentclass[12pt]{report}
 
-\input{naist-thesis}  % configure the variables in the file
+\input{naist-thesis}  % configure the variables in naist-thesis.tex
 
 \begin{document}
 \NaistFrontPages
