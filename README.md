@@ -15,6 +15,7 @@ You only need to `\input` one `.tex` file and one line just after `\begin{docume
 All the required configurations (e.g., your name, thesis title, etc.) are packed in the upper half of the template file.
 
 ### Usage
+Compiling the source below would result in a [PDF like this](https://github.com/iTakeshi/naist-thesis.tex/blob/master/main.pdf).
 ```tex
 % main.tex
 
